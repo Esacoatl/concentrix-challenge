@@ -1,0 +1,41 @@
+<!-- navbar component -->
+<app-navbar></app-navbar>
+<!-- page -->
+<div fxLayoutAlign="center" class="mt-10">
+  <h1>Welcome to the code challenge!</h1>
+</div>
+<div fxLayoutAlign="center" class="mb-15">
+  <img class="icons" src="../../../../assets/icons/redux.svg" />
+  <img class="icons" src="../../../../assets/icons/angular.svg" />
+  <img class="icons" src="../../../../assets/icons/azure.svg" />
+</div>
+<div fxLayoutAlign="center" class="mb-25">
+  <button
+    mat-mini-fab
+    matTooltip="About"
+    (click)="openAboutDialog('1200ms', '400ms')"
+  >
+    <mat-icon class="mb-2">info</mat-icon>
+  </button>
+</div>
+<div fxLayoutAlign="center">
+  <mat-card
+    class="welcome-card"
+    [class.mat-elevation-z10]="true"
+    color="secondary"
+  >
+    <!-- use of lazy loading tabs with ng-tamplate -->
+    <mat-tab-group mat-align-tabs="center" color="accent">
+      <mat-tab label="Compress">
+        <ng-template matTabContent>
+          <app-compress></app-compress>
+        </ng-template>
+      </mat-tab>
+      <mat-tab label="Uncompress">
+        <ng-template matTabContent>
+          <app-uncompress></app-uncompress>
+        </ng-template>
+      </mat-tab>
+    </mat-tab-group>
+  </mat-card>
+</div>

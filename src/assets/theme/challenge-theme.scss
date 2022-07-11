@@ -1,0 +1,122 @@
+@import "@angular/material/theming";
+
+@include mat-core();
+
+/** accent color */
+$primary: (
+  50: #fae6ee,
+  100: #f2c1d4,
+  200: #ea97b8,
+  300: #e26d9b,
+  400: #db4e85,
+  500: #d52f70,
+  600: #d02a68,
+  700: #ca235d,
+  800: #c41d53,
+  900: #ba1241,
+  A100: #ffeaef,
+  A200: #ffb7c8,
+  A400: #ff84a2,
+  A700: #ff6a8e,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #ffffff,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$accent: (
+  50: #e4faf2,
+  100: #baf3de,
+  200: #8debc8,
+  300: #5fe2b2,
+  400: #3cdca2,
+  500: #1ad691,
+  600: #17d189,
+  700: #13cc7e,
+  800: #0fc674,
+  900: #08bc62,
+  A100: #e6fff1,
+  A200: #b3ffd6,
+  A400: #80ffba,
+  A700: #67ffac,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #000000,
+    600: #000000,
+    700: #000000,
+    800: #000000,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+$warn: (
+  50: #faebe7,
+  100: #f3ccc4,
+  200: #ebab9d,
+  300: #e28975,
+  400: #dc6f58,
+  500: #d6563a,
+  600: #d14f34,
+  700: #cc452c,
+  800: #c63c25,
+  900: #bc2b18,
+  A100: #fff1f0,
+  A200: #ffc3bd,
+  A400: #ff958a,
+  A700: #ff7e70,
+  contrast: (
+    50: #000000,
+    100: #000000,
+    200: #000000,
+    300: #000000,
+    400: #000000,
+    500: #ffffff,
+    600: #ffffff,
+    700: #ffffff,
+    800: #ffffff,
+    900: #ffffff,
+    A100: #000000,
+    A200: #000000,
+    A400: #000000,
+    A700: #000000,
+  ),
+);
+
+/** pallete*/
+$pallete-primary: mat-palette($primary);
+$pallete-accent: mat-palette($accent);
+$pallete-warn: mat-palette($warn);
+
+/** theme */
+$theme: mat-dark-theme(
+  (
+    color: (
+      primary: $pallete-primary,
+      accent: $pallete-accent,
+      warn: $pallete-warn,
+    ),
+  )
+);
+
+/** apply theme */
+@include angular-material-theme($theme);

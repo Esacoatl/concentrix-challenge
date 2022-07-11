@@ -1,0 +1,77 @@
+<form [formGroup]="compressForm" (ngSubmit)="btnAction()">
+  <div fxLayout="column" class="input-container mt-15 mb-15">
+    <!-- Input for compression action -->
+    <div fxLayout="row">
+      <div fxFlex="75">
+        <mat-form-field
+          fxFlex="100"
+          appearance="outline"
+          color="accent"
+          class="mt-15"
+        >
+          <mat-label>Enter the characters</mat-label>
+          <!-- Inputs with Masks -->
+          <input
+            *ngIf="numbersActive"
+            matInput
+            type="text"
+            formControlName="characters"
+            mask="A*"
+          />
+          <input
+            *ngIf="!numbersActive"
+            matInput
+            type="text"
+            formControlName="characters"
+            mask="S*"
+          />
+        </mat-form-field>
+      </div>
+      <div fxFlex="25" fxLayoutAlign="center center">
+        <button
+          mat-fab
+          color="accent"
+          type="submit"
+          [disabled]="!compressForm.valid"
+        >
+          <mat-icon>{{ btnIcon }}</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div fxLayout="row">
+      <!-- toggle Numbers -->
+      <div fxFlex="15" fxLayoutAlign="start start">
+        <mat-slide-toggle
+          *ngIf="btnIcon == 'archive'"
+          [(ngModel)]="numbersActive"
+          color="warn"
+          class="ml-10"
+          matTooltip="At your own risk 😱"
+          [ngModelOptions]="{ standalone: true }"
+          >Activate numbers</mat-slide-toggle
+        >
+      </div>
+      <!-- Compression or Uncompression result -->
+      <div fxFlex="70" fxLayoutAlign="center center">
+        <h2>
+          {{ resultChars }}
+        </h2>
+        <button
+          mat-icon-button
+          type="button"
+          (click)="copyToClipboard()"
+          matTooltip="Copied :)"
+          (mouseenter)="$event.stopImmediatePropagation()"
+          (mouseleave)="$event.stopImmediatePropagation()"
+          #tooltip="matTooltip"
+          (click)="tooltip.toggle()"
+          *ngIf="resultChars !== ''"
+          class="mb-15"
+        >
+          <mat-icon>file_copy</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</form>

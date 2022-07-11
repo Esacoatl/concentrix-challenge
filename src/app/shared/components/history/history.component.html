@@ -1,0 +1,14 @@
+<mat-accordion>
+  <mat-expansion-panel [class.mat-elevation-z10]="true">
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        <mat-icon class="mr-15">assignment</mat-icon>{{ historyTitle }}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <mat-list>
+      <mat-list-item class="mr-15" *ngFor="let item of recordItems"
+        ><mat-icon class="mr-15" color="accent">label</mat-icon>{{ item }}
+      </mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,4 @@
+{
+  "appService.defaultWebAppToDeploy": "/subscriptions/63011110-c5d5-42ea-932b-904004cb9bbb/microsoft.web/sites/subscriptions/63011110-c5d5-42ea-932b-904004cb9bbb/resourceGroups/ConcentrixChallenge/providers/Microsoft.Web/sites/ConcentrixCatalystChallenge",
+  "appService.deploySubpath": "dist"
+}
